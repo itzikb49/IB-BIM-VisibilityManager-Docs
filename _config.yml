@@ -1,3 +1,9 @@
-theme: jekyll-theme-cayman
 title: IB-BIM Visibility Manager — User Guide
-description: Official documentation and user guide for the IB-BIM Visibility Manager add-in for Autodesk Revit.
+description: Official documentation and user guide for IB-BIM Visibility Manager add-in for Autodesk Revit.
+theme: just-the-docs
+logo: /Images/VG Screen.png
+color_scheme: light
+
+# הגדרות ניווט
+nav_order: 1
+search_enabled: true
