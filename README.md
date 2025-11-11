@@ -33,9 +33,12 @@ You can also find additional documentation in the `/Docs` folder, including scre
 
 ---
 
-## 📄 Privacy Policy
-The privacy policy for all IB-BIM applications is available here:  
-👉 [View Privacy Policy](Docs/Privacy%20Policy.html)
+## 🔒 Privacy Policy
+
+The privacy policy for all IB-BIM applications, including the **Visibility Manager**,  
+is available at the following link:
+
+👉 [View Privacy Policy](https://itzikb49.github.io/ib-bim-privacy/)
 
 ---
 
