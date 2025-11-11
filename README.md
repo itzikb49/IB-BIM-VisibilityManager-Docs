@@ -19,7 +19,7 @@ The tool supports Revit 2023–2026 and integrates into the Revit Ribbon under t
 ## 📖 Documentation
 
 To view the complete **User Guide**, click here:  
-👉 [Open User Guide](Docs/User%20Guide.md)
+👉 [Open User Guide](User%20Guide.md)
 
 You can also find additional documentation in the `/Docs` folder, including screenshots and the privacy policy.
 
