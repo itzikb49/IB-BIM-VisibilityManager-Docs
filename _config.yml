@@ -4,6 +4,5 @@ theme: just-the-docs
 logo: /Images/VG Screen.png
 color_scheme: light
 
-# הגדרות ניווט
 nav_order: 1
 search_enabled: true
