@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% seo %}
+
+    <link rel="stylesheet"
+          href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png"
+          href="{{ "/Images/IB-BIM_200X200.png" | relative_url }}">
+  </head>
+
+  <body>
+
+    <!-- Header -->
+    <header class="page-header" role="banner">
+      <h1 class="project-name">
+        {{ page.title | default: site.title | default: site.github.repository_name }}
+      </h1>
+      <h2 class="project-tagline">
+        {{ page.description | default: site.description | default: site.github.project_tagline }}
+      </h2>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="site-nav">
+      <div class="main-content">
+        <a href="{{ "/" | relative_url }}">Home</a> |
+        <a href="{{ "/UserGuide" | relative_url }}">User Guide</a> |
+        <a href="{{ "/FAQ" | relative_url }}">FAQ</a> |
+        <a href="{{ "/LICENSE" | relative_url }}">License</a>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <main id="content" class="main-content" role="main">
+      {{ content }}
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer"
+            role="contentinfo"
+            style="text-align:center; padding:24px 0; color:#777; font-size:13px;">
+      <img src="{{ "/Images/IB-BIM_200X200.png" | relative_url }}"
+           alt="IB-BIM"
+           width="40"
+           style="vertical-align:middle; margin-right:8px;">
+      <span>© 2025 IB-BIM Tools · All rights reserved</span>
+    </footer>
+
+    {% if site.google_analytics %}
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', '{{ site.google_analytics }}', 'auto');
+        ga('send', 'pageview');
+      </script>
+    {% endif %}
+
+  </body>
+</html>

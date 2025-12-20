@@ -1,5 +1,12 @@
 ﻿# 🧩 IB-BIM Visibility Manager — UserGuide
 
+<p align="center">
+  <img src="Images/IB-BIM_200X200.png" alt="IB-BIM Logo" width="150">
+</p>
+
+<h1 align="center">IB-BIM Visibility Manager</h1>
+<p align="center">Professional Documentation</p>
+
 Official user documentation for the **IB-BIM Visibility Manager** add-in for Autodesk® Revit®.  
 This repository provides the **public user guide**, screenshots, and related documentation for the app published on the Autodesk App Store.
 
@@ -13,6 +20,7 @@ This repository provides the **public user guide**, screenshots, and related doc
 
 Supports Revit **2023–2026** and integrates into the Revit Ribbon under the **IB-BIM** tab.
 
+---
 ---
 
 ## 📄 Documentation

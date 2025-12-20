@@ -1,20 +1,23 @@
----
-layout: default
-title: "IB-BIM Visibility Manager — Documentation"
-nav_order: 1
----
+# 🧩 IB-BIM Visibility Manager — UserGuide
 
-# 📘 IB-BIM Visibility Manager — User Guide
+<p align="center">
+  <img src="Images/IB-BIM_200X200.png" alt="IB-BIM Logo" width="150">
+</p>
 
-Welcome to the official documentation for the **IB-BIM Visibility Manager** Revit add-in.
+<h1 align="center">IB-BIM Visibility Manager</h1>
+<p align="center">Professional Documentation</p>
 
-Use the links below to navigate:
-
-- [📖 Open Full User Guide](UserGuide.md)
-- [ℹ️ FAQ](FAQ.md)
-- [⚙️ Licensing Information](LICENSING.md)
-- [🛍️ Marketing Overview](Store/MARKETING.md)
+Official user documentation for the **IB-BIM Visibility Manager** add-in for Autodesk® Revit®.  
+This repository provides the **public user guide**, screenshots, and related documentation for the app published on the Autodesk App Store.
 
 ---
 
-© 2025 Itzik Bejarano — All rights reserved.
+## 📘 About the Add-in
+**IB-BIM Visibility Manager** helps Revit users efficiently manage:
+- View filters and VG (Visibility/Graphics) overrides  
+- Copy, remove, export, and import settings between views and templates  
+- Maintain visual consistency and streamline coordination workflows  
+
+Supports Revit **2023–2026** and integrates into the Revit Ribbon under the **IB-BIM** tab.
+
+---

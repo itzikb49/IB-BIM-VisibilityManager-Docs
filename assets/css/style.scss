@@ -1,0 +1,115 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+// Custom colors for IB-BIM brand
+$primary-color: #0078d4;
+$secondary-color: #005a9e;
+$accent-color: #40e0d0;
+
+// Header customization
+.page-header {
+  background-color: $secondary-color;
+  background-image: linear-gradient(120deg, $secondary-color, $primary-color);
+  padding: 3rem 1rem;
+}
+
+// Better typography
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+// Styled links
+a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  
+  &:hover {
+    color: darken($primary-color, 15%);
+    text-decoration: underline;
+  }
+}
+
+// Navigation menu
+.site-nav {
+  background-color: #f8f9fa;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+// Code blocks
+pre {
+  background-color: #f6f8fa;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  padding: 16px;
+  overflow: auto;
+}
+
+// Buttons
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 0.25rem;
+  background-color: $primary-color;
+  color: white;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  
+  &:hover {
+    background-color: darken($primary-color, 10%);
+    text-decoration: none;
+    color: white;
+  }
+}
+
+// Cards for features
+.feature-card {
+  background: white;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: box-shadow 0.2s ease;
+  
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
+}
+
+// Table styling
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: $primary-color;
+    color: white;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+}
+
+// Footer
+.site-footer {
+  margin-top: 3rem;
+  padding: 2rem 0;
+  border-top: 1px solid #e1e4e8;
+  text-align: center;
+  color: #666;
+}

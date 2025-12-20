@@ -1,15 +1,21 @@
-title: IB-BIM Visibility Manager Docs
-description: Official User and Technical Documentation
-theme: minima
+title: IB-BIM Visibility Manager
+description: Professional Revit Add-in Documentation
+theme: jekyll-theme-cayman
+show_downloads: false
+google_analytics: # אופציונלי - הוסף ID אם יש לך
+
+# Navigation
+header_pages:
+  - index.md
+  - User Guide.md
+  - FAQ.md
+  - LICENSE.md
+
+# Build settings
 markdown: kramdown
 plugins:
   - jekyll-relative-links
+  
 relative_links:
   enabled: true
   collections: true
-include:
-  - README.md
-  - UserGuide.md
-  - UserGuide_he.md
-  - FAQ.md
-  - LICENSING.md
