@@ -3,21 +3,22 @@ layout: default
 title: "IB-BIM Visibility Manager — User Guide"
 ---
 
-<div style="background:#0A3D91;color:white;padding:10px 15px;font-size:20px;font-weight:bold;">
-IB-BIM Visibility Manager — User Guide
-
-<div style="text-align:right; margin-top:10px;">
-  <a href="UserGuide_HE.md" 
-     style="background:#1e88e5;color:white;padding:8px 14px;
-            border-radius:6px;text-decoration:none;font-weight:bold;
-            font-family:Segoe UI, sans-serif;">
-     עברית / English
-  </a>
+<div align="right">
+  <img src="{{ "/Images/IB-BIM_200X200.png" | relative_url }}" alt="IB-BIM" width="150">
 </div>
 
-<hr/>
+## About the Add-in
 
-# Complete Step-by-Step Guide  
+Short introduction text explaining what Visibility Manager does,
+who it is for, and what problems it solves.
+
+👉 **[Jump to the Complete Step-by-Step Guide](#complete-step-by-step-guide)**
+
+---
+
+## Complete Step-by-Step Guide
+
+
 **Version 1.0.0 | Last Updated: November 2025**
 
 ## 📑 Table of Contents
