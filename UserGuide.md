@@ -1,11 +1,21 @@
 ---
 layout: default
 title: "IB-BIM Visibility Manager — User Guide"
+
 ---
 
-<div align="right">
-  <img src="{{ "/Images/IB-BIM_200X200.png" | relative_url }}" alt="IB-BIM" width="150">
+<nav style="margin: 12px 0 18px 0; font-size: 16px; font-weight: 600;">
+  <a href="{{ '/' | relative_url }}">Home</a> |
+  <a href="{{ '/UserGuide.html' | relative_url }}">User Guide</a> |
+  <a href="{{ '/FAQ.html' | relative_url }}">FAQ</a> |
+  <a href="{{ '/LICENSING.html' | relative_url }}">Pricing &amp; Support</a> |
+  <a href="{{ '/LICENSE.html' | relative_url }}">License</a>
+</nav>
+
+<div align="right" style="margin: 4px 0 6px 0;">
+  <img src="{{ "/Images/IB-BIM_200X200.png" | relative_url }}" alt="IB-BIM" width="150" style="display:block;">
 </div>
+
 
 ## About the Add-in
 
