@@ -1307,8 +1307,8 @@ These update in real-time as you check/uncheck items.
 ✓ **Selections are cleared** when closing window
 ✓ **Be aware of filters** - Select All only affects visible items
 
----
 
+<a id="real-world-workflows"></a>
 ## Real-World Workflows
 
 ### For BIM Managers
@@ -1577,8 +1577,9 @@ These update in real-time as you check/uncheck items.
    - Projects can import just the new filters (New Only mode)
    - Or update everything (Overwrite mode)
 
----
 
+
+<a id="troubleshooting"></a>
 ## Troubleshooting
 
 ### Filters Don't Appear in View After Import
