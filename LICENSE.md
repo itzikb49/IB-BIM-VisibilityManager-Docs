@@ -1,3 +1,9 @@
+---
+layout: default
+title: "License"
+permalink: /LICENSE.html
+---
+
 MIT License
 
 Copyright (c) 2025 ITZHAK BEJERANO
