@@ -34,12 +34,24 @@ a {
   }
 }
 
-// Navigation menu
+/* Navigation menu */
 .site-nav {
   background-color: #f8f9fa;
   padding: 1rem 0;
   margin-bottom: 2rem;
   border-bottom: 1px solid #dee2e6;
+}
+
+/* Navigation links styling */
+.site-nav a {
+  font-size: 20px;      /* הגדלת הפונט */
+  font-weight: 800;     /* Bold חזק */
+  color: #0d6efd;       /* כחול נקי */
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  text-decoration: underline;
 }
 
 // Code blocks

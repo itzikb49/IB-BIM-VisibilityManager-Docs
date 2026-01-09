@@ -120,7 +120,7 @@
 
 ## 📊 Pricing
 
-**Annual Subscription: $129/year**
+**Annual Subscription: $149/year**
 
 **Includes:**
 ✓ Support for Revit 2023, 2024, 2025, 2026
@@ -143,7 +143,7 @@ Never pay again for Revit version upgrades.
 **IB-BIM | Itzik Bejarano**
 
 **Support**: itzikb.bim@gmail.com
-**Website**: [your-website.com]
+**Website**: https://itzikb49.github.io/IB-BIM-VisibilityManager-Docs/
 **Documentation**: [docs-link]
 
 ---

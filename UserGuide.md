@@ -4,14 +4,6 @@ title: "IB-BIM Visibility Manager — User Guide"
 
 ---
 
-<nav style="margin: 12px 0 18px 0; font-size: 16px; font-weight: 600;">
-  <a href="{{ '/' | relative_url }}">Home</a> |
-  <a href="{{ '/UserGuide.html' | relative_url }}">User Guide</a> |
-  <a href="{{ '/FAQ.html' | relative_url }}">FAQ</a> |
-  <a href="{{ '/LICENSING.html' | relative_url }}">Pricing &amp; Support</a> |
-  <a href="{{ '/LICENSE.html' | relative_url }}">License</a>
-</nav>
-
 <div align="right" style="margin: 4px 0 6px 0;">
   <img src="{{ "/Images/IB-BIM_200X200.png" | relative_url }}" alt="IB-BIM" width="150" style="display:block;">
 </div>
@@ -73,7 +65,7 @@ who it is for, and what problems it solves.
 - Tool installs to:  
   `C:\ProgramData\Autodesk\ApplicationPlugins\`
 - Log files saved to:  
-  `C:\VISIBILITY EXPORT_IMPORT\`
+  `C:\ProgramData\IB-BIM\VisibilityManager\Logs\`
 
 ---
 
@@ -462,26 +454,35 @@ Remove from selected       [REMOVE] (orange/red button)
 
 6. **Choose Save Location:**
    - File dialog appears
-   - Default location: `C:\VISIBILITY EXPORT_IMPORT\`
-   - Default name: `ProjectName_Filters_YYYY-MM-DD.xlsx`
-   - You can change location and name
+   - Select your preferred folder for the export files
+   - Default name format: `Filters_[ViewType]_[HHMMSS]_[YYYYMMDD]_[ViewName].xlsx`
+   - Example: `Filters_3D_145351_20260109_Section View.xlsx`
+   - **Important:** Keep the `Filters_` prefix - this identifies the file content for import
+   - You can change the rest of the name as desired
+   - Note: View name can be in any language supported by Revit/Windows
 
 7. **Export Completes:**
 ```
    ✓ Export Successful
    
    Exported:
-   • ProjectName_Filters_2025-11-02.xlsx (15 filters)
-   • ProjectName.pat (Pattern library)
+   • Filters_3D_145351_20260109_Section View.xlsx (15 filters)
+   • Filters_3D_145351_20260109_Section View.pat (Fill patterns)
    
-   Location: C:\VISIBILITY EXPORT_IMPORT\
+   Location: [User selected folder]
    
    [Open Folder] [OK]
 ```
 
 8. **Files Created:**
-   - **Excel/CSV file:** Contains all filter data
-   - **PAT file:** Contains fill patterns used in filters (auto-created)
+   - **Excel/CSV file:** Contains all filter data (always created)
+   - **PAT file:** Contains fill/hatch patterns used in filters (only created if filters use custom patterns)
+
+**⚠️ CRITICAL: File Names Must Match**
+- The PAT file name **must exactly match** the Excel/CSV file name (except for the extension)
+- Example: `Filters_3D_145351_20260109_Office.xlsx` requires `Filters_3D_145351_20260109_Office.pat`
+- **If you rename the Excel file after export, you MUST also rename the PAT file to match**
+- Otherwise, the import will show a "Pattern library not found" warning
 
 **What's in the Export:**
 
@@ -502,14 +503,18 @@ Remove from selected       [REMOVE] (orange/red button)
 - Custom_Parameters (if any)
 
 **Pattern Library (.pat file):**
-- Contains definitions of all fill patterns used
-- Required for import to work correctly
-- Keep this file with your Excel/CSV file
+- Contains definitions of all fill/hatch patterns used in the filters
+- File name matches Excel file: `Filters_3D_145351_20260109_Section View.pat`
+- **Only created if filters use custom fill patterns** (not created if no patterns used)
+- Required for import to work correctly with all pattern definitions
+- Keep this file with your Excel/CSV file in the same folder
 
 **Best Practices:**
 - Export to a shared network location for team access
-- Use consistent naming: `ProjectType_Filters_Date.xlsx`
-- Keep Excel and PAT files together in same folder
+- Keep Excel/CSV and pattern files together in same folder
+- **Maintain the `Filters_` or `VGOverrides_` prefix** when renaming files - this helps identify file type
+- **If you rename the Excel file, always rename the pattern file (.pat or .lin) to match** - file names must be identical (except extension)
+- Use descriptive view names for easier file identification
 - Consider version control (Git) for CSV files
 
 ---
@@ -537,6 +542,8 @@ Remove from selected       [REMOVE] (orange/red button)
    - File dialog appears
    - Navigate to your exported Excel or CSV file
    - Select the file and click Open
+   - **Note:** The tool validates file content - if you try to import a VG Overrides file in Filters mode (or vice versa), you'll get an error message
+   - Make sure you're importing the correct file type for the current mode
 
 6. **Template Warning (if applicable):**
    - If current view uses a template:
@@ -558,18 +565,23 @@ Remove from selected       [REMOVE] (orange/red button)
    - **To affect only this view:** Remove it from template first in Revit
 
 7. **Pattern Library Check:**
-   - Tool looks for matching .PAT file
-   - Expected: Same name as Excel, .pat extension
-   - Same folder as Excel file
+   - Tool reads the Excel file content to determine if pattern file is needed
+   - **Only checks for pattern file if the filters actually use custom patterns**
+   - If patterns are needed, tool automatically looks for matching .pat file
+   - Expected name: Same as Excel file with .pat extension
+   - Example: If importing `Filters_3D_145351_20260109_Section View.xlsx`
+   - Looks for: `Filters_3D_145351_20260109_Section View.pat`
+   - Must be in the same folder as the Excel file
+   - **Important:** If you renamed the Excel file, you must also rename the PAT file to match
    
-   **If PAT file missing:**
+   **If PAT file missing (when patterns are needed):**
 ```
    ⚠️ Pattern Library Not Found
    
-   Expected: ProjectName.pat
-   Location: C:\VISIBILITY EXPORT_IMPORT\
+   Expected: Filters_3D_145351_20260109_Section View.pat
+   Location: [Same folder as the Excel file]
    
-   Filters will import but patterns may be missing.
+   Filters will import but custom fill patterns may be missing.
    
    Continue without patterns?
    
@@ -772,12 +784,23 @@ VG (Visibility/Graphics) Overrides control how entire categories display - color
    - Or **[XLSX]** for CSV
 
 6. **Choose Location:**
-   - Default: `C:\VISIBILITY EXPORT_IMPORT\`
-   - File name: `ProjectName_VG_2025-11-02.xlsx`
+   - File dialog appears - select your preferred folder
+   - Default name format: `VGOverrides_[ViewType]_[HHMMSS]_[YYYYMMDD]_[ViewName].xlsx`
+   - Example: `VGOverrides_3D_145408_20260109_Section View.xlsx`
+   - **Important:** Keep the `VGOverrides_` prefix - this identifies the file content for import
+   - You can change the rest of the name as desired
+   - Note: View name can be in any language supported by Revit/Windows
 
 7. **Files Created:**
-   - Excel/CSV with VG override data
-   - PAT file with patterns (if used)
+   - **Excel/CSV file:** Contains all VG override data (always created)
+   - **LIN file:** Contains line patterns used in overrides (only created if overrides use custom line patterns)
+   - Example: `VGOverrides_3D_145408_20260109_Section View.lin`
+
+**⚠️ CRITICAL: File Names Must Match**
+- The LIN file name **must exactly match** the Excel/CSV file name (except for the extension)
+- Example: `VGOverrides_3D_145408_20260109_Office.xlsx` requires `VGOverrides_3D_145408_20260109_Office.lin`
+- **If you rename the Excel file after export, you MUST also rename the LIN file to match**
+- Otherwise, the import will show a "Pattern library not found" warning
 
 **What's Exported:**
 - Category name
@@ -809,10 +832,14 @@ VG (Visibility/Graphics) Overrides control how entire categories display - color
 
 5. **Select File:**
    - Choose previously exported VG Excel/CSV file
+   - **Note:** The tool validates file content - if you try to import a Filters file in VG Overrides mode (or vice versa), you'll get an error message
+   - Make sure you're importing the correct file type for the current mode
 
 6. **Handle Dialogs:**
    - Template warning (if applicable)
-   - Pattern library check
+   - Pattern library check (tool reads Excel content to see if .lin file is needed)
+   - If needed: looks for matching .lin file (same name as Excel, different extension)
+   - **Important:** File names must match exactly, e.g., `VGOverrides_3D_145408_20260109_Office.xlsx` needs `VGOverrides_3D_145408_20260109_Office.lin`
    - Conflict resolution (Merge/Overwrite/New Only)
 
 7. **Confirmation:**
@@ -1088,9 +1115,9 @@ When you export filters, the tool:
 2. **Collects** unique patterns used
 
 3. **Creates** a .PAT file with pattern definitions:
-   - File name matches Excel file: `ProjectName_Filters.pat`
+   - File name matches Excel file exactly (e.g., `Filters_3D_145351_20260109_Office.pat`)
    - Saved in same location as Excel file
-   - Contains both drafting and model patterns
+   - Contains both drafting and model fill patterns
 
 4. **Includes** metadata:
 ```
@@ -1118,10 +1145,10 @@ Standard Revit pattern file format:
 
 When you import filters, the tool:
 
-1. **Looks** for matching .PAT file:
+1. **Looks** for matching .pat file:
    - Same base name as Excel file
    - Same folder as Excel file
-   - Example: Importing `Office_Filters.xlsx` looks for `Office_Filters.pat`
+   - Example: Importing `Filters_3D_145351_20260109_Office.xlsx` looks for `Filters_3D_145351_20260109_Office.pat`
 
 2. **If found:**
    - Reads all pattern definitions
@@ -1146,6 +1173,25 @@ When you import filters, the tool:
 3. Select .PAT file from Visibility Manager export
 4. Patterns import to project
 5. Then import filters - they'll find the patterns
+
+**Understanding Pattern File Types:**
+
+The tool exports different pattern file types depending on what you're exporting:
+
+| Export Type | Pattern File | Contains | When Created |
+|-------------|--------------|----------|--------------|
+| **Filters** | `.pat` file | Fill/Hatch patterns (surface patterns) | Only if filters use custom fill patterns |
+| **VG Overrides** | `.lin` file | Line patterns (line styles) | Only if overrides use custom line patterns |
+
+**Examples:**
+- Exporting Filters: `Filters_3D_145351_20260109_Office.xlsx` + `Filters_3D_145351_20260109_Office.pat`
+- Exporting VG: `VGOverrides_3D_145408_20260109_Office.xlsx` + `VGOverrides_3D_145408_20260109_Office.lin`
+
+**Key Points:**
+- Each export type has its own pattern file type
+- Pattern files are only created when custom patterns are actually used
+- File names always match exactly (same base name, different extension)
+- Both files must be in the same folder for import to work correctly
 
 **Creating Pattern Library:**
 
@@ -1340,8 +1386,8 @@ These update in real-time as you check/uncheck items.
    - Launch Visibility Manager
    - Select Filters mode
    - Select All filters
-   - Export to network location: `\\Company\BIM\Standards\Filters_v2025.xlsx`
-   - PAT file auto-created: `Filters_v2025.pat`
+   - Export to network location: `\\Company\BIM\Standards\Filters_FloorPlan_153022_20260109_Standards Library.xlsx`
+   - PAT file auto-created (if patterns used): `Filters_FloorPlan_153022_20260109_Standards Library.pat`
 
 3. **Document for Team:**
    - Create README in same folder
@@ -1394,18 +1440,19 @@ These update in real-time as you check/uncheck items.
 
 1. **Regular Exports:**
    - Export filters monthly or at key milestones
-   - File naming: `Project_Filters_SD_2025-03.xlsx`
-   - Include phase abbreviation (SD, DD, CD)
+   - File name includes timestamp automatically
+   - Rename if needed to add phase info: `Filters_FloorPlan_153022_20260309_SD Phase.xlsx`
+   - Keep original timestamp for traceability
 
 2. **Store in Project Folder:**
 ```
    Project/
    ├── BIM/
    │   ├── Filters/
-   │   │   ├── Project_Filters_SD_2025-03.xlsx
-   │   │   ├── Project_Filters_SD_2025-03.pat
-   │   │   ├── Project_Filters_DD_2025-06.xlsx
-   │   │   ├── Project_Filters_DD_2025-06.pat
+   │   │   ├── Filters_FloorPlan_153022_20260309_SD Phase.xlsx
+   │   │   ├── Filters_FloorPlan_153022_20260309_SD Phase.pat
+   │   │   ├── Filters_FloorPlan_160445_20260615_DD Phase.xlsx
+   │   │   ├── Filters_FloorPlan_160445_20260615_DD Phase.pat
 ```
 
 3. **Use Git for CSV Files:**
@@ -1662,43 +1709,65 @@ If filter looks for elements that don't exist, nothing shows.
 
 ---
 
-### Pattern Not Found Warnings
+### Pattern Not Found Warnings (Fill Patterns or Line Patterns)
 
 **Symptoms:**
-- After import, Revit shows warnings: "Pattern 'XXX' not found"
-- Filters import successfully but use default solid pattern
-- Fill patterns appear as solid instead of hatches
+- After import, Revit shows warnings: "Pattern 'XXX' not found" or "Line pattern 'XXX' not found"
+- **For Filters:** Filters import successfully but use default solid fill pattern instead of custom hatches
+- **For VG Overrides:** Categories import but use default line patterns instead of custom line styles
 
 **Cause:**
-- .PAT file missing during import
-- .PAT file in different location than Excel file
-- .PAT file has different name than expected
+- Pattern file (.pat or .lin) missing during import
+- Pattern file in different location than Excel file
+- Pattern file has different name than expected
+- **Excel file was renamed after export, but pattern file was not renamed to match**
 
-**Solution 1: Locate PAT File**
-1. Find the .PAT file from original export
+**Solution 1: Rename Pattern File to Match Excel**
+1. Find the pattern file (.pat for Filters, .lin for VG) from original export
+2. Rename it to match the Excel file name exactly (keep the correct extension)
+3. Examples:
+   - Filters: Excel `Filters_3D_145351_20260109_Office_RENAMED.xlsx` needs PAT `Filters_3D_145351_20260109_Office_RENAMED.pat`
+   - VG: Excel `VGOverrides_3D_145408_20260109_Office_RENAMED.xlsx` needs LIN `VGOverrides_3D_145408_20260109_Office_RENAMED.lin`
+4. Move both files to same folder if needed
+5. Re-import
+
+**Solution 2: Locate and Move Pattern File**
+1. Find the pattern file from original export
 2. Move it to same folder as Excel file
-3. Ensure names match:
-   - Excel: `Project_Filters.xlsx`
-   - PAT: `Project_Filters.pat`
+3. Ensure names match exactly:
+   - **Filters example:** Excel `Filters_3D_145351_20260109_Office.xlsx` with PAT `Filters_3D_145351_20260109_Office.pat`
+   - **VG example:** Excel `VGOverrides_3D_145408_20260109_Office.xlsx` with LIN `VGOverrides_3D_145408_20260109_Office.lin`
 4. Re-import
 
-**Solution 2: Manual Pattern Load**
-1. In Revit: Manage tab → Additional Settings → Fill Patterns
-2. Click "Load..."
-3. Browse to .PAT file location
-4. Select and load
-5. Patterns now available in project
-6. Re-import filters (or they might work now)
+**Solution 3: Manual Pattern Load**
+- **For Fill Patterns (Filters):**
+  1. In Revit: Manage tab → Additional Settings → Fill Patterns
+  2. Click "Load..."
+  3. Browse to .pat file location
+  4. Select and load
+  5. Patterns now available in project
+  6. Re-import filters (or they might work now)
 
-**Solution 3: Accept Default Patterns**
-- If patterns not critical, continue without
-- Filters will work, just won't look identical
-- Manually assign patterns later in Visibility/Graphics
+- **For Line Patterns (VG Overrides):**
+  1. In Revit: Manage tab → Additional Settings → Line Patterns
+  2. Click "Load..."
+  3. Browse to .lin file location
+  4. Select and load
+  5. Line patterns now available in project
+  6. Re-import VG overrides
+
+**Solution 4: Accept Default Patterns**
+- If custom patterns are not critical, you can continue without them
+- Filters/VG overrides will work functionally, just won't display with custom patterns
+- You can manually assign patterns later:
+  - For Filters: Edit filter graphics in Visibility/Graphics dialog
+  - For VG: Edit category graphics in Visibility/Graphics dialog
 
 **Prevention:**
-- Always keep Excel and PAT files together
-- Use consistent file naming
-- Store in same folder
+- Always keep Excel and pattern files (.pat or .lin) together in the same folder
+- **If you rename Excel file, immediately rename the pattern file to match**
+- Store both files in same location
+- Maintain matching file names (same base name, different extensions only)
 
 ---
 
@@ -1805,6 +1874,20 @@ If filter looks for elements that don't exist, nothing shows.
 **Solution:**
 - Break into smaller exports
 - Import in batches
+
+**Cause 4: Wrong File Type**
+- Trying to import VG Overrides file in Filters mode
+- Trying to import Filters file in VG Overrides mode
+- File doesn't match the internal format expected
+
+**Solution:**
+1. Check the file name prefix:
+   - Filters files should start with `Filters_`
+   - VG Overrides files should start with `VGOverrides_`
+2. Make sure you're in the correct mode:
+   - Filters mode for importing filter files
+   - V/G Overrides mode for importing VG files
+3. If you renamed the file, verify it came from the correct export type
 
 **To Report Issues:**
 

@@ -1,4 +1,10 @@
-﻿# Pricing & Support
+﻿---
+layout: default
+title: "Pricing & Support"
+permalink: /LICENSING.html
+---
+
+# Pricing & Support
 
 ## Free Trial
 **30 days free** - Full feature access with no limitations
