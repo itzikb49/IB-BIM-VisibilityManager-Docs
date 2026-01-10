@@ -14,6 +14,8 @@ title: "IB-BIM Visibility Manager — User Guide"
 Short introduction text explaining what Visibility Manager does,
 who it is for, and what problems it solves.
 
+📺 **[Watch Video Tutorial on YouTube](https://youtu.be/CIhrgM-_v4E?si=vOZ1XOtPWBk9nFzV)** ← See the tool in action!
+
 👉 **[Jump to the Complete Step-by-Step Guide](#complete-step-by-step-guide)**
 
 ---
@@ -29,7 +31,13 @@ who it is for, and what problems it solves.
 - [Launching the Tool](#launching-the-tool)
 - [Interface Overview](#interface-overview)
 - [Working with Filters](#working-with-filters)
+  - [Copying Filters Between Views](#copying-filters-between-views)
+  - [Exporting Filters](#exporting-filters)
+  - [Importing Filters](#importing-filters)
 - [Working with VG Overrides](#working-with-vg-overrides)
+  - [Copying VG Overrides](#copying-vg-overrides)
+  - [Exporting VG Overrides](#exporting-vg-overrides)
+  - [Importing VG Overrides](#importing-vg-overrides)
 - [Advanced Features](#advanced-features)
 - [Real-World Workflows](#real-world-workflows)
 - [Troubleshooting](#troubleshooting)
