@@ -14,7 +14,7 @@ title: "IB-BIM Visibility Manager — User Guide"
 Short introduction text explaining what Visibility Manager does,
 who it is for, and what problems it solves.
 
-📺 **[Watch Video Tutorial on YouTube](https://youtu.be/CIhrgM-_v4E?si=vOZ1XOtPWBk9nFzV)** ← See the tool in action!
+📺 **[Watch Video Tutorial on YouTube](https://youtu.be/68-bxWQfsUg)** ← See the tool in action!
 
 👉 **[Jump to the Complete Step-by-Step Guide](#complete-step-by-step-guide)**
 
