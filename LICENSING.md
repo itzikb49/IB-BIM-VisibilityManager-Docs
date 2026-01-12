@@ -21,9 +21,9 @@ permalink: /LICENSING.html
 
 ## What's Included
 ✓ All Revit versions (2023-2026)
-✓ All Revit main categories supported (Model, Annotation, Analytical)
-✓ Example: 292 categories in Revit 2025/2026
-✓ All updates and new features  
+✓ **All Revit main categories supported** (Model, Annotation, Analytical)
+✓ **Example: 292 categories in Revit 2025/2026**
+✓ All updates and new features
 ✓ Email support  
 ✓ Access to documentation
 
