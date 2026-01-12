@@ -15,9 +15,11 @@ This repository provides the **public user guide**, screenshots, and related doc
 ## 📘 About the Add-in
 **IB-BIM Visibility Manager** helps Revit users efficiently manage:
 - View filters and VG (Visibility/Graphics) overrides  
+- All Revit categories: Model, Annotation, and Analytical
 - Copy, remove, export, and import settings between views and templates  
 - Maintain visual consistency and streamline coordination workflows  
 
-Supports Revit **2023–2026** and integrates into the Revit Ribbon under the **IB-BIM** tab.
+Supports **all main categories** in Revit 2023–2026 (e.g., 292 categories in Revit 2025/2026).
+Integrates into the Revit Ribbon under the **IB-BIM** tab.
 
 ---

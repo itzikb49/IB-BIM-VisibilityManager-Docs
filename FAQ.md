@@ -265,6 +265,34 @@ Do you want to continue?
 - Often this is actually the desired behavior for coordination!
 - Templates exist specifically to keep multiple views synchronized
 
+### Q: How many categories are supported for VG Overrides?
+
+**A:** All Revit main categories across Model, Annotation, and Analytical types.
+
+**Example (Revit 2025/2026):**
+- 96 Model categories (Walls, Doors, Windows, MEP elements, Structure, Site, etc.)
+- 180 Annotation categories (Dimensions, Tags, Text Notes, Symbols, Detail Items, etc.)
+- 16 Analytical categories (Loads, Links, Nodes, Boundary Conditions, etc.)
+- **Total: 292 main categories**
+
+The application automatically detects all categories in your Revit version, so support grows as Revit evolves.
+
+**Current limitation:**
+Main categories only in v1.0. Subcategories planned for v2.0.
+
+---
+
+### Q: What's the difference between main categories and subcategories?
+
+**A:** 
+- **Main category:** Walls, Doors, Windows (✅ Supported in v1.0)
+- **Subcategory:** Walls > Exterior, Walls > Interior (⚠️ Coming in v2.0)
+
+Most BIM workflows use main categories for visibility control. Subcategories are advanced refinements for specific scenarios.
+
+**Why main categories are powerful:**
+Main categories cover all major element types and provide comprehensive visibility control. Even with main categories only, you have complete control over Model, Annotation, and Analytical elements across your entire project.
+
 ---
 
 ## Filters

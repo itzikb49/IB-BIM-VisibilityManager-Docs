@@ -30,9 +30,10 @@ who it is for, and what problems it solves.
 - [Installation](#installation)
 - [Launching the Tool](#launching-the-tool)
 - [Interface Overview](#interface-overview)
-- [Working with Filters](#working-with-filters)
-  - [Copying Filters Between Views](#copying-filters-between-views)
-  - [Removing Filters from Views](#removing-filters-from-views)
+- [Working with VG Overrides](#working-with-vg-overrides)
+  - [Supported Categories](#supported-categories)
+  - [Copying VG Overrides](#copying-vg-overrides)
+  - [Removing VG Overrides](#removing-vg-overrides)
   - [Exporting Filters](#exporting-filters)
   - [Importing Filters](#importing-filters)
 - [Working with VG Overrides](#working-with-vg-overrides)
@@ -691,6 +692,39 @@ Remove from selected       [REMOVE] (orange/red button)
 ## Working with VG Overrides
 
 VG (Visibility/Graphics) Overrides control how entire categories display - colors, line weights, patterns, transparency. The workflow is identical to Filters, just using different content.
+
+### Supported Categories
+
+IB-BIM Visibility Manager supports all Revit main categories across all types:
+
+- ✅ **Model Categories** - Walls, Doors, Windows, MEP elements, Structure, Site, etc.
+- ✅ **Annotation Categories** - Dimensions, Tags, Text Notes, Symbols, Detail Items, etc.
+- ✅ **Analytical Categories** - Loads, Links, Nodes, Boundary Conditions, etc.
+
+**Example (Revit 2025/2026):**
+292 main categories supported:
+- 96 Model categories
+- 180 Annotation categories
+- 16 Analytical categories
+
+The application automatically detects and supports all categories available in your Revit version.
+
+#### Current Scope (v1.0.0)
+
+✅ **Supported:**
+- All main categories (Model, Annotation, Analytical)
+- VG Override copying and removal
+- Export/Import operations
+
+⚠️ **Limitation:**
+- Subcategories not yet supported (planned for v2.0)
+
+**What this means:**
+- ✅ Walls (main category) - Fully supported
+- ⚠️ Walls > Exterior (subcategory) - Coming in v2.0
+
+Most BIM workflows rely primarily on main category overrides. Subcategories are advanced refinements used in specific scenarios.
+
 
 ### Copying VG Overrides
 

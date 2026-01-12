@@ -42,6 +42,17 @@
 - **Import to multiple views** - Apply overrides in bulk
 - **Complete formatting** - All graphic settings preserved
 
+### 📊 Comprehensive Category Support
+- **All Revit Categories** - Model, Annotation, and Analytical
+- **Example**: 292 main categories in Revit 2025/2026
+  - 96 Model categories (Walls, Doors, MEP, Structure, etc.)
+  - 180 Annotation categories (Dimensions, Tags, Text Notes, etc.)
+  - 16 Analytical categories (Loads, Links, Nodes, etc.)
+- **Industry-leading annotation support** - Most tools ignore annotation categories
+- **Automatic detection** - Works with all categories in your Revit version
+- **Current scope**: Main categories fully supported
+- **Roadmap**: Subcategory support planned for v2.0
+
 ### ⚙️ Professional Features
 - **Enable/Visibility control** - Granular control over filter states
 - **Conflict resolution modes** - Merge, Overwrite, or New Only
@@ -56,6 +67,7 @@
 - **BIM Managers** - Standardize visibility across projects
 - **BIM Coordinators** - Streamline multi-discipline coordination and clash detection views
 - **MEP Coordinators** - Quickly set up system-specific filters for trades coordination
+- **Documentation Teams** - Manage annotation categories (dimensions, tags, text) across sheets
 - **Template creators** - Build reusable filter libraries
 - **Large teams** - Share complex configurations
 - **Multi-discipline coordination** - Quick view setup for Arch/Struct/MEP
@@ -82,6 +94,8 @@
 
 - **Revit versions**: 2023, 2024, 2025, 2026 (fully supported)
 - **View types**: All supported (Floor Plans, RCPs, Sections, Elevations, 3D Views, Schedules, etc.)
+- **Categories**: All main categories (Model, Annotation, Analytical) - e.g., 292 in Revit 2025/2026
+- **Subcategories**: Not yet supported (planned for v2.0)
 - **Filter rule types**: All parameter filter rules
 - **Parameters**: Built-in, Project, Shared, Custom
 - **Export formats**: Excel (.xlsx), CSV
