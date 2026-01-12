@@ -265,20 +265,6 @@ Do you want to continue?
 - Often this is actually the desired behavior for coordination!
 - Templates exist specifically to keep multiple views synchronized
 
-### Q: How many categories are supported for VG Overrides?
-
-**A:** All Revit main categories across Model, Annotation, and Analytical types.
-
-**Example (Revit 2025/2026):**
-- 96 Model categories (Walls, Doors, Windows, MEP elements, Structure, Site, etc.)
-- 180 Annotation categories (Dimensions, Tags, Text Notes, Symbols, Detail Items, etc.)
-- 16 Analytical categories (Loads, Links, Nodes, Boundary Conditions, etc.)
-- **Total: 292 main categories**
-
-The application automatically detects all categories in your Revit version, so support grows as Revit evolves.
-
-**Current limitation:**
-Main categories only in v1.0. Subcategories planned for v2.0.
 
 ---
 
@@ -326,6 +312,22 @@ The tool shows clear warnings and lets you choose the best approach.
 
 
 ## VG Overrides
+
+### Q: How many categories are supported for VG Overrides?
+
+**A:** All Revit main categories across Model, Annotation, and Analytical types.
+
+**Example (Revit 2025/2026):**
+- 96 Model categories (Walls, Doors, Windows, MEP elements, Structure, Site, etc.)
+- 180 Annotation categories (Dimensions, Tags, Text Notes, Symbols, Detail Items, etc.)
+- 16 Analytical categories (Loads, Links, Nodes, Boundary Conditions, etc.)
+- **Total: 292 main categories**
+
+The application automatically detects all categories in your Revit version, so support grows as Revit evolves.
+
+**Current limitation:**
+Main categories only in v1.0. Subcategories planned for v2.0.
+
 
 ### Q: What's the difference between Filters and VG Overrides?
 **A:**
