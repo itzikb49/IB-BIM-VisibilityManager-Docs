@@ -7,6 +7,19 @@
 <h1 align="center">IB-BIM Visibility Manager</h1>
 <p align="center">Professional Documentation</p>
 
+<!-- Language Selector -->
+<div align="center" style="margin: 20px 0;">
+<table>
+<tr>
+<td align="center" style="padding: 8px 12px;"><a href="./">🇬🇧 <strong>English</strong></a></td>
+<td align="center" style="padding: 8px 12px;"><a href="./ar/">🇸🇦 العربية</a></td>
+<td align="center" style="padding: 8px 12px;"><a href="./ko/">🇰🇷 한국어</a></td>
+<td align="center" style="padding: 8px 12px;"><a href="./es/">🇪🇸 Español</a></td>
+<td align="center" style="padding: 8px 12px;"><a href="./pt/">🇧🇷 Português</a></td>
+</tr>
+</table>
+</div>
+
 Official user documentation for the **IB-BIM Visibility Manager** add-in for Autodesk® Revit®.  
 This repository provides the **public user guide**, screenshots, and related documentation for the app published on the Autodesk App Store.
 
