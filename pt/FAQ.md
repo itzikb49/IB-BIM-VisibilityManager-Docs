@@ -93,6 +93,18 @@ title: "IB-BIM Visibility Manager — Perguntas Frequentes"
 
 ---
 
+## Filtros {#filters}
+
+As perguntas sobre filtros encontram-se na seção [Fluxo de Trabalho e Operações](#workflow--operations) acima e em [Exportar/Importar](#exportimport) abaixo.
+
+---
+
+## Substituições VG {#vg-overrides}
+
+As substituições VG seguem o mesmo fluxo de trabalho dos filtros. Consulte o [Guia do Usuário completo](./UserGuide.md) para mais detalhes.
+
+---
+
 ## Exportar/Importar {#exportimport}
 
 ### P: Como funciona a exportação — qual vista é a origem?
@@ -168,6 +180,8 @@ Isso garante que ao importar filtros para outro projeto, todos os padrões estej
 **R:** Certifique-se de ter clicado em "Yes" na caixa de diálogo de parâmetros personalizados. Se clicou em "No", os parâmetros não serão criados.
 
 ---
+
+## Licença e Suporte {#licensing--support}
 
 **Para informações completas sobre licença, preços e termos:**
 👉 **[Ver Guia de Licença e Preços](LICENSING.md)**

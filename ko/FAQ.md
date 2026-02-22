@@ -93,6 +93,18 @@ title: "IB-BIM Visibility Manager — 자주 묻는 질문"
 
 ---
 
+## 필터 {#filters}
+
+필터 관련 질문은 위의 [워크플로우 및 작업](#workflow--operations) 섹션을 참고하세요. 아래의 [내보내기/가져오기](#exportimport) 섹션에서도 필터 관련 정보를 확인할 수 있습니다.
+
+---
+
+## VG 재정의 {#vg-overrides}
+
+VG 재정의는 필터와 동일한 워크플로우를 따릅니다. 자세한 내용은 [전체 사용자 가이드](./UserGuide.md)를 참고하세요.
+
+---
+
 ## 내보내기/가져오기 {#exportimport}
 
 ### Q: 내보내기는 어떻게 작동하나요 — 어떤 뷰가 소스인가요?
@@ -168,6 +180,8 @@ title: "IB-BIM Visibility Manager — 자주 묻는 질문"
 **A:** 사용자 정의 매개변수 대화상자에서 "Yes"를 클릭했는지 확인하세요. "No"를 클릭하면 매개변수가 생성되지 않습니다.
 
 ---
+
+## 라이선스 및 지원 {#licensing--support}
 
 **전체 라이선스 정보, 가격 및 조건:**
 👉 **[라이선스 및 가격 가이드 보기](LICENSING.md)**
